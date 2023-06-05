@@ -1,0 +1,42 @@
+*{
+    font-size: 1.1rem;
+}
+
+nav {
+    position: fixed;
+    top:0;
+    z-index: 99;
+    background: var(--color-black);
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+}
+
+li {
+    padding: 1rem 1.5rem;
+}
+
+nav li.active{
+    background-color: var(--color-primary);
+}
+
+nav li:hover{
+    background-color: var(--color-dark);
+}
+
+.logo {
+    color: var(--color-primary);
+    padding-left: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+

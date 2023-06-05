@@ -1,0 +1,15 @@
+*{
+    --bar-height: 15px;
+}
+
+.skill_item{
+    background-color: gray;
+}
+
+.exp_bar{
+    height: var(--bar-height);
+    width: 200px;
+    background-color: aliceblue;
+    border-radius: var(--bar-height);
+    z-index: 1;
+}
