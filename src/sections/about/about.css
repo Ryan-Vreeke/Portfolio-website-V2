@@ -1,61 +1,44 @@
-#about{
-    margin: 0;
-    padding: 0;
-    position: relative;
-    text-align: center;
+* {
+    --picture-size: 600px;
 }
 
-img{
-    margin-top: 0;
-    padding: 0;
-    max-width: 100vm;
-    height: auto;
+#header{
+    margin: 8rem 0 0 0;
+    padding: 2rem;
 }
 
-.about_content{
-    color: var(--color-white);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#name_header{
+    padding-bottom: 10px;
 }
 
-.name {
-    font-size: 5rem;
-    color: white;
+#self_image{
+    min-width: var(--picture-size);
+    height: var(--picture-size);
+    border-radius: 50%;
+    border: solid 8px var(--color-dark);
 }
 
-.media_links{
+.header__container{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
 }
 
-.media_links > li{
-    padding: 0;
-    margin: 1rem;
+.education > li{
+    margin-left: 3rem;
+    padding: 1rem;
+    list-style: disc;
 }
 
-.awesome_icon{
-    font-size: 2.5rem;
-}
-
-.about_btns{
-    background-color: white;
-    padding: 0.5rem 2rem;
-    margin: 0.5rem;
-    border: 1px solid;
-    border-color: blue;
-    border-radius: 10px;
-    font-size: 1.5rem;
+.interests > li{
+    margin-left: 3rem;
+    padding: 5px;
     font-weight: bold;
-    color: black;
+    list-style: disc;
 }
 
-.about_btns:hover{
-    transform: scale(110%);
-    background-color: blue;
-    transition: all 0.3s ease-in-out;
-    color: white;
+.bold_text{
+    font-weight: bolder;
+    font-size: 20px;
 }
-
-

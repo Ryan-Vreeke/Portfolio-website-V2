@@ -5,8 +5,9 @@ function Skills() {
   const barHeight = 15;
   return (
     <section id="skills">
+      <h2 className='section_header'>Skills</h2>
       <div className="skill_set">
-        <ul>
+        <ul className='skill_group'>
           <li className="skill_item">
             <div className="exp_bar">
               <div style={{
@@ -16,29 +17,7 @@ function Skills() {
                 backgroundColor: "blue"
               }}></div>
             </div>
-            <h6>C#</h6>
-          </li>
-          <li className="skill_item">
-            <div className="exp_bar">
-              <div style={{
-                height: "100%",
-                borderRadius: `${barHeight}px`,
-                width: `${filled}%`,
-                backgroundColor: "blue"
-              }}></div>
-            </div>
-            <h6>React</h6>
-          </li>
-          <li className="skill_item">
-            <div className="exp_bar">
-              <div style={{
-                height: "100%",
-                borderRadius: `${barHeight}px`,
-                width: `${filled}%`,
-                backgroundColor: "blue"
-              }}></div>
-            </div>
-            <h6>C++</h6>
+            <h4>C#</h4>
           </li>
         </ul>
       </div>

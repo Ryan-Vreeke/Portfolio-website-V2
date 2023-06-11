@@ -2,14 +2,29 @@
     --bar-height: 15px;
 }
 
-.skill_item{
-    background-color: gray;
-}
-
 .exp_bar{
     height: var(--bar-height);
-    width: 200px;
+    width: 400px;
     background-color: aliceblue;
     border-radius: var(--bar-height);
     z-index: 1;
+}
+
+.skill_group{
+    padding-top: 1rem;
+    padding-left: 5rem;
+    padding-bottom: 1rem;
+}
+
+.section_header{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.skill_set{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: auto;
+    background-color: gray;
 }
