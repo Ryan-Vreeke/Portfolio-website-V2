@@ -1,0 +1,54 @@
+* {
+    --bar-height: 20px;
+}
+
+.exp_bar {
+    height: var(--bar-height);
+    width: 800px;
+    background-color: var(--color-light);
+    border-radius: var(--bar-height);
+    z-index: 1;
+}
+
+.text_items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text_items > h4{
+    padding-top: 1rem;
+    font-size: 18px;
+    color: var(--color-bright);
+    font-weight: bold;
+}
+
+.skill_group {
+    margin: 1rem 2rem 1rem 0;
+}
+
+.skill_set {
+    height: auto;
+    background-color: var(--color-black);
+    border: solid 4px var(--color-dark-light);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill_item {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+}
+
+@media screen and (max-width: 1800px) {
+    .skill_set {
+
+        flex-direction: column;
+    }
+
+    .exp_bar {
+        width: 98%;
+        
+    }
+}

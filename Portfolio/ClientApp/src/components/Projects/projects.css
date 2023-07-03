@@ -1,0 +1,114 @@
+#Projects {
+  background-color: var(--color-dark);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+
+.project_scroll {
+  width: 100%;
+  height: 600px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+  border-radius: 8px;
+  background-color: var(--color-black);
+  border: solid 4px var(--color-dark-light);
+  margin-bottom: 2rem;
+}
+
+/*PROJECT CARDS*/
+
+.project_card {
+  display: flex;
+  text-decoration: none;
+
+  margin: 8px;
+  height: 95%;
+  width: 400px;
+  min-width: 400px;
+  border-radius: 4px;
+  transition: 0.3s ease-in;
+
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+.project_card img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 8px;
+
+  filter: blur(2px);
+
+
+}
+
+.project_text {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/opacity/see-through */
+  color: var(--color-white);
+  font-weight: bold;
+  border: 3px solid var(--color-dim);
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;
+}
+
+.project_text h1 {
+  margin-bottom: 10px;
+  margin-top: 3rem;
+  color: var(--color-white);
+  text-shadow: 2px 2px var(--color-dark);
+  font-size: 3rem;
+  text-align: center;
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.project_text h2 {
+  margin-bottom: 50px;
+  color: var(--color-bright);
+  text-shadow: 2px 2px var(--color-dark);
+  font-size: 1.5rem;
+}
+
+.project_text p {
+  color: var(--color-bright);
+  text-shadow: 2px 2px var(--color-dark);
+  padding: 10px;
+  font-size: 1rem;
+  word-break: keep-all;
+  white-space: normal;
+
+}
+
+.project_card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+  .project_scroll {
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .project_text p{
+    display: none;
+  }
+}
