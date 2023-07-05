@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
 import './projects.css'
-import image from '../Home/portfolio.jpg'
 
 function Projects() {
   const [project, setProject] = useState([]);

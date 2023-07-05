@@ -1,6 +1,6 @@
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
+import ProjectPage from "./components/Projects/ProjectPage"
 
 const AppRoutes = [
   {
@@ -13,7 +13,7 @@ const AppRoutes = [
   },
   {
     path: '/projects',
-    element: <Projects />
+    element: <ProjectPage />
   }
 ];
 

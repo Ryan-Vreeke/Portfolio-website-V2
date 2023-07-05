@@ -4,33 +4,41 @@
   word-break: break-all;
 }
 
+.navbar-custom{
+  background-color: var(--color-black) !important;
+  border-bottom:solid 4px var(--color-dark-light) !important;
+}
+
 .brand {
   text-decoration: none;
-  color: blue;
+  color: var(--color-primary);
   text-align: center;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: bolder;
+  padding: 8px;
+}
+
+.brand:hover{
+  cursor:pointer;
+  color:var(--color-third);
 }
 
 .nav-link{
   font-size: 18px;
 }
 
-.nav-item{
+.nav-item {
+  color: var(--color-white);
   padding: 0;
   margin-left: 2rem;
 }
 
 .nav-item:hover{
-  background-color: gray;
+  background-color: var(--color-dark-light);
   transition:all 0.4s ease;
   border-radius: 4px;
 }
 
-
-html {
-  font-size: 14px;
-}
 
 @media (min-width: 768px) {
   html {

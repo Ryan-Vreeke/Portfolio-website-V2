@@ -16,6 +16,10 @@
     padding: 1rem;
 }
 
+input{
+  padding-left: 1rem;
+}
+
 #right > button {
     background-color: var(--color-white);
     margin-top: 2rem;
