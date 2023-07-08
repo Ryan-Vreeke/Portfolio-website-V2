@@ -5,6 +5,7 @@ import Skills from '../Skills/Skills'
 import Projects from '../Projects/Projects';
 import RecentBlog from '../Blog/RecentBlog';
 import Contact from '../Contact/Contact';
+import Timeline from '../Timeline/Timeline';
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
             <Skills/>
             <Projects/>
             <RecentBlog />
+            <Timeline />
             <Contact />
         </section>
     )

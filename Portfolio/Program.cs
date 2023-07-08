@@ -42,7 +42,7 @@ using (var scope = app.Services.CreateScope())
     DbInitializer.Initialize(dbContext);
 
     // Apply any pending migrations
-    //dbContext.Database.Migrate();
+    dbContext.Database.Migrate();
 }
 
 app.Run();

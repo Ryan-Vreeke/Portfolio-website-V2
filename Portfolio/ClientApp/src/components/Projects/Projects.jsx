@@ -12,8 +12,6 @@ function Projects() {
       .catch(error => console.error(error));
   }, []);
 
-  console.log(project);
-
   return (
     <section id='Projects'>
       <h3 className='section_title'>Projects</h3>

@@ -1,12 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
 using Portfolio.Models;
-using SQLitePCL;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
-
-
 
 namespace Portfolio.Controllers
 {
@@ -24,6 +19,11 @@ namespace Portfolio.Controllers
             _dbContext = dbContext;
         }
 
+        [HttpGet("all")]
+        public ActionResult<ProjectItem[]> GetAll(){
+          var projects = _dbContext.Projects.Include(p => p.Skills).ToArray();
+          return Ok(projects);
+        }
 
         [HttpGet]
         [Produces("application/json")]

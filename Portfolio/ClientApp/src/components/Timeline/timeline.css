@@ -1,0 +1,18 @@
+.vertical-timeline-element-content{
+    background: var(--color-bright);
+    
+}
+
+.timeline-element{
+    color: var(--color-black);
+}
+
+.timeline-element h3{
+    color: var(--color-primary);
+    font-weight: bolder;
+}
+
+.timeline-date{
+    color: var(--color-bright);
+    font-weight: bold;
+}
