@@ -20,20 +20,51 @@ namespace Portfolio.Controllers
         }
 
         [HttpGet("all")]
-        public ActionResult<ProjectItem[]> GetAll(){
-          var projects = _dbContext.Projects.Include(p => p.Skills).ToArray();
-          return Ok(projects);
+        public ActionResult<List<ProjectDto>> GetAll()
+        {
+            var projects = _dbContext.Projects.Include(p => p.Skills).ToList();
+
+            var projectDtos = projects.Select(p => new ProjectDto
+            {
+                Id = p.Id,
+                Title = p.Title,
+                Image = p.Image,
+                Desc = p.Desc,
+                Skills = p.Skills.Select(s => s.Name).ToList()
+            }).ToList();
+
+            return Ok(projectDtos);
         }
 
         [HttpGet]
         [Produces("application/json")]
-        public ActionResult<ProjectItem[]> Get()
+        public ActionResult<List<ProjectDto>> Get()
         {
             var projects = _dbContext.Projects
-                .Include(p => p.Skills) // Eagerly load the Skills collection
-                .ToArray();
+                .Include(p => p.Skills)
+                .Where(project => project.Display).ToList();
 
-            return Ok(projects);
+            var projectDtos = projects.Select(p => new ProjectDto
+            {
+                Id = p.Id,
+                Title = p.Title,
+                Image = p.Image,
+                Desc = p.Desc,
+                Skills = p.Skills.Select(s => s.Name).ToList()
+            }).ToList();
+
+            return Ok(projectDtos);
         }
     }
+
+    public class ProjectDto
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public List<string> Skills { get; set; }
+        public string? Image { get; set; }
+        public string? Desc { get; set; }
+    }
+
+
 }

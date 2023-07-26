@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Http.Json;
 using Microsoft.EntityFrameworkCore;
 using Portfolio.Data;
 using YourProjectName.Data;
@@ -10,7 +12,14 @@ builder.Services.AddControllersWithViews();
 
 // Add SQLite Database configuration
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+   options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+// Configure the JSON serializer options
+builder.Services.Configure<JsonOptions>(options =>
+{
+    options.SerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+});
 
 var app = builder.Build();
 

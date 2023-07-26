@@ -15,8 +15,12 @@ namespace Portfolio.Data
         public DbSet<ProjectItem> Projects { get; set; }
         public DbSet<SkillItem> Skills { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder){
-            base.OnModelCreating(modelBuilder);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProjectItem>()
+            .HasMany(s => s.Skills)
+            .WithMany(c => c.ProjectItems)
+            .UsingEntity(j => j.ToTable("ProjectSkills"));
         }
     }
 }

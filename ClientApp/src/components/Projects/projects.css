@@ -96,6 +96,17 @@
 
 }
 
+.langs_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  height: 5rem;
+}
+.langs_container h2{
+  padding: 5px;
+}
+
 .project_card:hover {
   transform: scale(1.05);
   cursor: pointer;

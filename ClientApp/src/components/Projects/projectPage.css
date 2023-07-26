@@ -1,6 +1,6 @@
 /*OVERVIEW*/
 .overview{
-  background: var(--color-black);
+  
   width: 95%;
   max-width: 1500px;
   height: 40vh;
@@ -8,17 +8,24 @@
   border-radius: 8px;
   margin-bottom: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   display: flex;
 }
 
 .language_chart{
  width: 350px;
  height: 350px;
+ background: var(--color-black);
+ border-radius: 8px;
+ padding: 0.5rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
 }
 
 .language_chart canvas{
-
+  max-width: 90%;
+  max-height: 90%;
 }
 
 .project_grid{

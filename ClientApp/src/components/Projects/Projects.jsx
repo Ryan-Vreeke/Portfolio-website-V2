@@ -19,7 +19,7 @@ function Projects() {
       {project.length > 0 ? (
         <div className="project_scroll">
           {project.map(p => (
-            <Card name={p.title} des={p.desc} image={p.image} type={p.skills.map(skill => skill.name).join(', ')} src={p.id} />
+            <Card name={p.title} des={p.desc} image={p.image} type={p.skills.map(skill => skill).join(', ')} src={p.id} />
           ))}
         </div>
       ) : (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card.jsx'
 import './projectPage.css'
-import { Chart, ArcElement, Tooltip } from 'chart.js'
+import { Chart, ArcElement, Tooltip} from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 
 Chart.register(ArcElement, Tooltip);
@@ -12,12 +12,17 @@ function ProjectPage() {
   const DoughnutChart = () => {
 
     const [skills, setSkills] = useState([]);
+
     useEffect(() => {
-      fetch('skill/')
+      fetch('skill/percent')
         .then(response => response.json())
-        .then(data => setSkills(data))
+        .then(data => {
+          const decodedData = JSON.parse(data);
+          setSkills(Object.entries(decodedData).map(([name, experience]) => ({ name, experience })));
+        })
         .catch(error => console.error(error));
     }, []);
+
 
     const data = {
       labels: skills.map(s => s.name),
@@ -30,7 +35,7 @@ function ProjectPage() {
     };
 
     const options = {
-      cutout: 150,
+      cutout: 140,
       responsive: true,
       plugins: {
         tooltip: {
@@ -44,7 +49,7 @@ function ProjectPage() {
       beforeDatasetsDraw(chart) {
         const { ctx, data } = chart;
         const { labels } = data;
-        let fontSize = 90;
+        let fontSize = 60;
 
         ctx.save();
         ctx.font = `bolder ${fontSize / 2}px sans-serif`;
@@ -52,7 +57,7 @@ function ProjectPage() {
         ctx.textBaseLine = 'middle';
 
         const tooltipItem = chart.tooltip._active && chart.tooltip._active[0];
-        const tooltipValue = tooltipItem ? data.datasets[0].data[tooltipItem.index] : data.datasets[0].data[0];
+        const tooltipValue = tooltipItem ? `${data.datasets[0].data[tooltipItem.index]}%` : `${data.datasets[0].data[0]}%`;
         const tooltipLabel = tooltipItem ? labels[tooltipItem.index] : labels[0];
         const fillColor = tooltipItem ? data.datasets[0].backgroundColor[tooltipItem.index] : data.datasets[0].backgroundColor[0];
 
@@ -64,7 +69,7 @@ function ProjectPage() {
       }
     };
 
-    return <Doughnut data={data} options={options} plugins={[textCenter]} />
+    return <Doughnut data={data} options={options} plugins={[textCenter]}/>
   };
 
 
@@ -89,7 +94,7 @@ function ProjectPage() {
       <div className="project_grid">
         {projects.length > 0 ? (
           projects.map(p => (
-            <Card name={p.title} des={p.desc} image={p.image} type={p.skills.map(skill => skill.name).join(', ')} src={p.id} />
+            <Card name={p.title} des={p.desc} image={p.image} type={p.skills.map(skill => skill).join(', ')} src={p.id} />
           ))
         ) : (
           <h2>Loading...</h2>

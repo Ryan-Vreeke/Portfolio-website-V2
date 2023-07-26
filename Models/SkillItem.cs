@@ -7,8 +7,9 @@ namespace Portfolio.Models
     {
         public SkillItem()
         {
+            ProjectItems = new HashSet<ProjectItem>();
         }
-        
+
         [Key]
         public int Id { get; set; }
 
@@ -16,5 +17,8 @@ namespace Portfolio.Models
         public string Name { get; set; }
 
         public float Experience { get; set; }
+
+        public virtual ICollection<ProjectItem> ProjectItems { get; set; }
+
     }
 }
