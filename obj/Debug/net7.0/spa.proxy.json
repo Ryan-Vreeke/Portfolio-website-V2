@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:44467",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "/home/ryan/Projects/Portfolio-website-V2/ClientApp/",
+"MaxTimeoutInSeconds": "120"
+}
+}
