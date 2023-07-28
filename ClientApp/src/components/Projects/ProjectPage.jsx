@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card.jsx'
 import './projectPage.css'
-import { Chart, ArcElement, Tooltip} from 'chart.js'
+import { Chart, ArcElement, Tooltip, Title, LinearScale, CategoryScale, PointElement, LineElement } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 
-Chart.register(ArcElement, Tooltip);
+Chart.register(ArcElement, Title, Tooltip, LinearScale, CategoryScale, PointElement, LineElement);
 
 function ProjectPage() {
 
@@ -69,7 +70,56 @@ function ProjectPage() {
       }
     };
 
-    return <Doughnut data={data} options={options} plugins={[textCenter]}/>
+    return <Doughnut data={data} options={options} plugins={[textCenter]} />
+  };
+
+  const LineChart = () => {
+    const data = {
+      labels: ['2019', '2020', '2021', '2022', '2023'],
+      datasets: [
+        {
+          label: 'Projects',
+          data: [12, 19, 20, 4, 3],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.0,
+        },
+      ],
+    };
+
+    const options = {
+      scales: {
+        x: {
+          grid: {
+            color: 'black',
+          },
+          ticks: {
+            color: 'white',
+          },
+        },
+        y: {
+          grid: {
+            color: 'black',
+          },
+          ticks:{
+            color: 'white',
+          },
+          beginAtZero: false,
+        },
+      },
+      plugins: {
+        tooltip: {
+          enabled: true // <-- this option disables tooltips
+        },
+        title: {
+          color:'white',
+          text: 'Projects Per Year',
+          display: true,
+        },
+      }
+    };
+
+    return <Line data={data} options={options} />;
   };
 
 
@@ -89,6 +139,9 @@ function ProjectPage() {
       <div className='overview'>
         <div className="language_chart">
           <DoughnutChart />
+        </div>
+        <div className="project_chart">
+          <LineChart />
         </div>
       </div>
       <div className="project_grid">

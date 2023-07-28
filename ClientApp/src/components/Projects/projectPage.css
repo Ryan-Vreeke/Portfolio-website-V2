@@ -1,9 +1,7 @@
 /*OVERVIEW*/
 .overview{
-  
   width: 95%;
   max-width: 1500px;
-  height: 40vh;
   margin: auto;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -13,8 +11,8 @@
 }
 
 .language_chart{
- width: 350px;
- height: 350px;
+ width: 25%;
+ height: 550px;
  background: var(--color-black);
  border-radius: 8px;
  padding: 0.5rem;
@@ -27,6 +25,24 @@
   max-width: 90%;
   max-height: 90%;
 }
+
+.project_chart {
+  background: var(--color-black);
+  width: 75%;
+  height: 550px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.project_chart canvas{
+  min-width: 100%;
+  padding: 0.5rem;
+}
+
 
 .project_grid{
   background: var(--color-black);
@@ -117,10 +133,27 @@
 }
 
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
+  .project_card{
+    width: 40vw;
+  }
   .project_grid{
     grid-template-columns: 1fr 1fr;
     grid-gap: 5px;
+  }
+  
+  .overview{
+    flex-direction: column;
+  }
+
+  .language_chart{
+    width: 100%;
+  }
+  
+  .project_chart{
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 
